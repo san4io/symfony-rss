@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/Code":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/Code","hostpath":"/home/alex/Code/Work/waavo","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/alex/Code/Work/waavo","disabled":false,"__vagrantfile":true}}}
