@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>Last Modified</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Url</th>
+        <th>Items count</th>
+        <th>Last Item</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for feed in feeds %}
+        <tr>
+            <td>{{ feed.lastUpdate|date('Y-m-d H:i:s') }}</td>
+            <td><a href="{{ url('show', {'id' : feed.id}) }}">{{ feed.title }}</a></td>
+            <td><a href="{{ url('show_category', {'category' : feed.category}) }}">{{ feed.category }}</a></td>
+            <td>{{ feed.url }}</td>
+            <td>{{ feed.itemsCount }}</td>
+            <td>{{ feed.lastItem.title }} ({{ feed.lastItem.published|date('Y-m-d H:i:s') }})</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

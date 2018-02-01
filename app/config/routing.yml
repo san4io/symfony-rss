@@ -1,0 +1,4 @@
+rss:
+    resource: "@RssBundle/Resources/config/routing.yml"
+rssatom:
+    resource: "@DebrilRssAtomBundle/Resources/config/routing.yml"

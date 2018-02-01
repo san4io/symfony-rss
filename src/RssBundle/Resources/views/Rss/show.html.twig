@@ -1,0 +1,35 @@
+{% extends "RssBundle:Template:base.html.twig" %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ feed.title }}</h4>
+            <h6 class="card-subtitle text-muted">{{ feed.lastUpdate|date('Y-m-d H:i:s') }}</h6>
+            <div class="card-text">
+                <div><strong>Category: </strong> {{ feed.category }}</div>
+                <div><strong>Url: </strong>{{ feed.url }}</div>
+                <div><strong>Items: </strong>{{ feed.itemsCount }}</div>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Published</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Link</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in feed.items %}
+            <tr>
+                <td>{{ item.published|date('Y-m-d H:i:s') }}</td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.description|raw }}</td>
+                <td><a href="{{ item.link }}">{{ item.link }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

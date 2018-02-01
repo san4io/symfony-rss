@@ -1,0 +1,3 @@
+rss:
+    resource: "@RssBundle/Controller/"
+    type:     annotation

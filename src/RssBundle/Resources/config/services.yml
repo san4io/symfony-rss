@@ -1,0 +1,20 @@
+services:
+    rss.services.save_handler:
+        class: RssBundle\Services\SaveHandler
+        arguments:
+            - '@feedio'
+            - '@rss.services.factory.feed'
+            - '@rss.entity.repository.feed'
+
+    rss.services.factory.feed:
+        class: RssBundle\Services\Factory\FeedFactory
+        arguments:
+            - '@rss.services.factory.item'
+
+    rss.services.factory.item:
+        class: RssBundle\Services\Factory\ItemFactory
+
+    rss.entity.repository.feed:
+        class: RssBundle\Entity\Repository\FeedRepository
+        arguments:
+            - '@doctrine.orm.entity_manager'
